@@ -14,7 +14,6 @@ PREDICTIONSCRIPTS="PREDICTORS"
 FPOUT="RESULTS/temp/fps.txt"
 PREDOUT="RESULTS/temp"
 
-
 #==============================================================================
 
 NO_ARGS=0
