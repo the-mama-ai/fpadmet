@@ -91,8 +91,10 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
-
-fittedmodel <- readRDS("MODELS/model_phototoxhuman_pubchem.rds")
+path <- paste(ROOT_PATH, "/MODELS/model_phototoxhuman_pubchem.rds", sep="")
+fittedmodel <- readRDS(path)
+#
+# fittedmodel <- readRDS("MODELS/model_phototoxhuman_pubchem.rds")
 X = read.csv(fpfile, header=F, row.names=1, colClasses = "factor")
 yhat <- predict(fittedmodel, newdata = X)
 

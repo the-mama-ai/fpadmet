@@ -1,6 +1,8 @@
 library(caret)
 library(ranger)
 library(randomForest)
+setwd(dirname(getwd()))
+source("config.R")
 
 
 fitCaretModel = function(dxtrain=NULL, dytrain = NULL, bestpars)
@@ -93,8 +95,9 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
+path <- paste(ROOT_PATH, "/MODELS/model_bsep_ecfp4.rds", sep="")
+fittedmodel <- readRDS(path)
 
-fittedmodel <- readRDS("MODELS/model_bsep_ecfp4.rds")
 X = read.csv(fpfile, header=F, row.names=1, colClasses = "factor")
 yhat <- predict(fittedmodel, newdata = X)
 

@@ -8,8 +8,12 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
-fittedmodel <- readRDS("MODELS/model_skinpen_pubchem.rds")
-fittedqrfmodel <- readRDS("MODELS/qrf_model_skinpen_pubchem.rds")
+path <- paste(ROOT_PATH, "/MODELS/model_skinpen_pubchem.rds", sep="")
+fittedmodel <- readRDS(path)
+
+path <- paste(ROOT_PATH, "/MODELS/qrf_model_skinpen_pubchem.rds", sep="")
+fittedqrfmodel <- readRDS(path)
+
 
 X = read.csv(fpfile, header=F, row.names=1, colClasses = "factor")
 yhat <- predict(fittedmodel, newdata = X)

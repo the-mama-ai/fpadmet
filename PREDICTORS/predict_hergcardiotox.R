@@ -94,7 +94,12 @@ outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
 
-fittedmodel <- readRDS("MODELS/model_hergcardiotox_fcfp6.rds")
+# fittedmodel <- readRDS("MODELS/model_hergcardiotox_fcfp6.rds")
+
+path <- paste(ROOT_PATH, "/MODELS/model_hergcardiotox_fcfp6.rds", sep="")
+fittedmodel <- readRDS(path)
+
+
 X = read.csv(fpfile, header=F, row.names=1, colClasses = "factor")
 yhat <- predict(fittedmodel, newdata = X)
 
