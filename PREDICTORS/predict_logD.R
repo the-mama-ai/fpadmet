@@ -1,6 +1,10 @@
 library(caret)
 library(ranger)
+# setwd(dirname(getwd()))
+# source("config.R")
 
+setwd(getwd())
+source("config.R")
 
 
 args = commandArgs(trailingOnly=TRUE)

@@ -1,10 +1,11 @@
 library(caret)
 library(ranger)
 library(randomForest)
-setwd(dirname(getwd()))
+# setwd(dirname(getwd()))
+# source("config.R")
+
+setwd(getwd())
 source("config.R")
-
-
 
 fitCaretModel = function(dxtrain=NULL, dytrain = NULL, bestpars)
 {

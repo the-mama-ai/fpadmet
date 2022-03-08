@@ -1,7 +1,7 @@
 library(caret)
 library(ranger)
 library(randomForest)
-setwd(dirname(getwd()))
+setwd(getwd())
 source("config.R")
 
 
