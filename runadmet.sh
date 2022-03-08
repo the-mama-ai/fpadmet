@@ -2,17 +2,13 @@
 
 #==============================================================================
 # Software locations
-#FPGEN="java -jar /Users/karinazad/Desktop/MMAI/fpadmet/FINGERPRINTER/FingerprintGenerator.jar"
-#RSCRIPT="/usr/local/bin/Rscript"
-#PREDICTIONSCRIPTS="/Users/karinazad/Desktop/MMAI/fpadmet/PREDICTORS"
-#FPOUT="/Users/karinazad/Desktop/MMAI/fpadmet/RESULTS/temp/fps.txt"
-#PREDOUT="/Users/karinazad/Desktop/MMAI/fpadmet/RESULTS/temp"
+PARENT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-FPGEN="java -jar FINGERPRINTER/FingerprintGenerator.jar"
+FPGEN="java -jar ${PARENT_PATH}/FINGERPRINTER/FingerprintGenerator.jar"
 RSCRIPT="/usr/local/bin/Rscript"
-PREDICTIONSCRIPTS="PREDICTORS"
-FPOUT="RESULTS/temp/fps.txt"
-PREDOUT="RESULTS/temp"
+PREDICTIONSCRIPTS="${PARENT_PATH}/PREDICTORS"
+FPOUT="${PARENT_PATH}/RESULTS/temp/fps.txt"
+PREDOUT="${PARENT_PATH}/RESULTS/temp"
 
 #==============================================================================
 
@@ -22,7 +18,6 @@ E_OPTERROR=65
 
 SCRIPTNAME=`basename "$0"`
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 
 
 function usage() {
@@ -133,12 +128,22 @@ retcode=0
 case $ptype in
       1)
 #          echo "Anticommensal Effect on Human Gut Microbiota"
+
           $FPGEN -output $FPOUT -fptype PUBCHEM -mol $molfile
           $RSCRIPT $PREDICTIONSCRIPTS"/predict_anticommensal.R" $FPOUT $PREDOUT"/1.txt" $adan
           retcode=$?
           ;;
       2)
 #          echo "Blood-brain-barrier penetration"
+#          echo $FPOUT
+#          $FPGEN -output $FPOUT -fptype PUBCHEM -mol $molfile
+#          $RSCRIPT $PREDICTIONSCRIPTS"/predict_bbbp.R" $FPOUT $PREDOUT"/2.txt" $adan
+#          retcode=$?
+#          ;;
+
+          echo $PARENT_PATH
+          echo $FPOUT
+
           $FPGEN -output $FPOUT -fptype PUBCHEM -mol $molfile
           $RSCRIPT $PREDICTIONSCRIPTS"/predict_bbbp.R" $FPOUT $PREDOUT"/2.txt" $adan
           retcode=$?
