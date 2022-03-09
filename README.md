@@ -24,6 +24,12 @@ bash installpackages.sh quantregForest
 bash installpackages.sh randomForest
 ```
 
+Addition:
+```
+bash installpackages.sh reticulate
+```
+
+
 ## Using FPADMET
 
 Usage of FPADMET is governed by a bash script. The input to the script is a file containing SMILES strings. The "-a" option allows for the calculation of prediction uncertainty (in the case of regression) and confidence (for classification). The output files are written to the **RESULTS** directory. For regression, a prediction uncertainty is calculated using quantile regression. For classification, conformal prediction is used to calculate a confidence (how certain the model is that the prediction is a singleton) and a credibility. If the credibility is low this means that any existing hypothesis about the label of the new object is unlikely i.e. we are dealing with an unknown testing label.
