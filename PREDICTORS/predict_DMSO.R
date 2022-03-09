@@ -97,7 +97,7 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
-path <- paste(ROOT_PATH, "/MODELS/model_dmso_ecfp2.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/model_dmso_ecfp2.rds", sep="")
 fittedmodel <- readRDS(path)
 
 X = read.csv(fpfile, header=F, row.names=1, colClasses = "factor")

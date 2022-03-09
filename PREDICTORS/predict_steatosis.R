@@ -97,7 +97,7 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
-path <- paste(ROOT_PATH, "/MODELS/model_steatosis_maccs.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/model_steatosis_maccs.rds", sep="")
 fittedmodel <- readRDS(path)
 
 # fittedmodel <- readRDS("MODELS/model_steatosis_maccs.rds")

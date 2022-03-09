@@ -13,10 +13,10 @@ fpfile = args[1]
 outfile = args[2]
 applyadan = as.logical(as.integer(args[3]))
 
-path <- paste(ROOT_PATH, "/MODELS/model_hsa_ap2d.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/model_hsa_ap2d.rds", sep="")
 fittedmodel <- readRDS(path)
 
-path <- paste(ROOT_PATH, "/MODELS/qrf_model_hsa_ap2d.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/qrf_model_hsa_ap2d.rds", sep="")
 fittedqrfmodel <- readRDS(path)
 
 

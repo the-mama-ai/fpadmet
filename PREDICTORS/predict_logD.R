@@ -16,10 +16,10 @@ applyadan = as.logical(as.integer(args[3]))
 # fittedmodel <- readRDS("MODELS/model_logD_pubchem.rds")
 # fittedqrfmodel <- readRDS("MODELS/qrf_model_logD_pubchem.rds")
 
-path <- paste(ROOT_PATH, "/MODELS/model_logD_pubchem.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/model_logD_pubchem.rds", sep="")
 fittedmodel <- readRDS(path)
 
-path <- paste(ROOT_PATH, "/MODELS/qrf_model_logD_pubchem.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/qrf_model_logD_pubchem.rds", sep="")
 fittedqrfmodel <- readRDS(path)
 
 

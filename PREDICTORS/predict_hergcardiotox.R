@@ -100,7 +100,7 @@ applyadan = as.logical(as.integer(args[3]))
 
 # fittedmodel <- readRDS("MODELS/model_hergcardiotox_fcfp6.rds")
 
-path <- paste(ROOT_PATH, "/MODELS/model_hergcardiotox_fcfp6.rds", sep="")
+path <- paste(FPADMET_PATH, "/MODELS/model_hergcardiotox_fcfp6.rds", sep="")
 fittedmodel <- readRDS(path)
 
 
